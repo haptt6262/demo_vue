@@ -25,16 +25,33 @@ const API_SCHEME = {
             method: METHOD.SEARCH
         },
         ADD: {
-            url: `${BASE_URL}/item`,
+            url: `${BASE_URL}/teacher`,
             method: METHOD.POST
         },
         UPDATE: {
-
-            url: `${BASE_URL}/item`,
+            url: `${BASE_URL}/teacher/update/:id`,
             method: METHOD.PUT
         },
         DELETE: {
-            url: `${BASE_URL}/item`,
+            url: `${BASE_URL}/teacher/delete/:id`,
+            method: METHOD.DELETE
+        },
+    },
+    STUDENTS: {
+        GET: {
+            url: `${BASE_URL}/stu`,
+            method: METHOD.GET
+        },
+        ADD: {
+            url: `${BASE_URL}/stu`,
+            method: METHOD.POST
+        },
+        UPDATE: {
+            url: `${BASE_URL}/stu/update/:id_student`,
+            method: METHOD.PUT
+        },
+        DELETE: {
+            url: `${BASE_URL}/stu/delete/:id`,
             method: METHOD.DELETE
         },
     }

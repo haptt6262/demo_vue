@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import { itemTypes } from '../constants/actionsType/index'
-const DEFAULT_STATE = {
+const INITIAL_STATE = {
     listItem: [],
     isFetching: false,
     error: false,
@@ -8,56 +8,56 @@ const DEFAULT_STATE = {
     type: ''
 }
 
-export const useStore = defineStore({
-    id: 'item',
-    state: () => DEFAULT_STATE,
+export const useStudentStore = defineStore({
+    id: 'student',
+    state: () => INITIAL_STATE,
     actions: {
         getRequest() {
-            itemTypes.GET_ITEMS_REQUEST
+            itemTypes.GET_STUDENT_REQUEST
             this.isFetching = true
         },
         getSuccess(payload) {
-            console.log("payload in reducer: ", payload);
+            console.log("payload student in reducer: ", payload);
             this.listItem = payload,
-                // console.log("in reducer: ", this.listItem);
-                itemTypes.GET_ITEMS_SUCCESS,
+                console.log("in reducer: ", this.listItem);
+            itemTypes.GET_STUDENT_SUCCESS,
                 this.isFetching = false
         },
         getFailure() {
-            itemTypes.GET_ITEMS_FAILURE
+            itemTypes.GET_STUDENT_FAILURE
         },
         addRequest() {
-            itemTypes.ADD_ITEMS_REQUEST
+            itemTypes.ADD_STUDENT_REQUEST
             this.isFetching = true
         },
         addSuccess() {
-            itemTypes.ADD_ITEMS_SUCCESS
+            itemTypes.ADD_STUDENT_SUCCESS
             this.isFetching = false
         },
         addFailure() {
-            itemTypes.ADD_ITEMS_FAILURE
+            itemTypes.ADD_STUDENT_FAILURE
         },
         deleteRequest() {
-            itemTypes.DELETE_ITEMS_REQUEST
+            itemTypes.DELETE_STUDENT_REQUEST
             this.isFetching = true
         },
         deleteSuccess() {
-            itemTypes.DELETE_ITEMS_SUCCESS
+            itemTypes.DELETE_STUDENT_SUCCESS
             this.isFetching = false
         },
         deleteFailure() {
-            itemTypes.DELETE_ITEMS_FAILURE
+            itemTypes.DELETE_STUDENT_FAILURE
         },
         updateRequest() {
-            itemTypes.UPDATE_ITEMS_REQUEST
+            itemTypes.UPDATE_STUDENT_REQUEST
             this.isFetching = true
         },
         updateSuccess() {
-            itemTypes.UPDATE_ITEMS_SUCCESS
+            itemTypes.UPDATE_STUDENT_SUCCESS
             this.isFetching = false
         },
         updateFailure() {
-            itemTypes.UPDATE_ITEMS_FAILURE
+            itemTypes.UPDATE_STUDENT_FAILURE
         }
     },
 })
